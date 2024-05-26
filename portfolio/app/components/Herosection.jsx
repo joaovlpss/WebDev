@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
-import Image from "next/image"
-import { TypeAnimation } from 'react-type-animation'
+import Image from "next/image";
+import { TypeAnimation } from 'react-type-animation';
 
 const HeroSection = () => {
     return (
@@ -10,18 +10,18 @@ const HeroSection = () => {
 
                 <div className="col-span-7 place-self-center text-center sm:text-left">
                     <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold">
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-400 to-gray-600">
                             Greetings, I'm {" "}
                         </span>
                         <TypeAnimation
                             sequence={[
                                 'Joao',
                                 1000,
-                                'a Machine Learning Developer',
+                                'a Data Analyst',
                                 1000,
-                                'an AI Builder',
+                                'a ML Engineer',
                                 1000,
-                                'a Software Engineer',
+                                'an AI Engineer',
                                 1000
                             ]}
                             wrapper="span"
@@ -30,14 +30,14 @@ const HeroSection = () => {
                         />
                     </h1>
                     <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-                        I'm a CS student at the University of Sao Paulo. I'm interested in software development and AI/ML Technologies. 
+                        I'm a CS student at the University of Sao Paulo. I'm interested in software development and AI/ML Technologies.
                     </p>
 
                     <div>
-                        <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-200 text-white">
+                        <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-gray-600 to-gray-800 hover:bg-slate-200 text-white">
                             Contact Me
                         </button>
-                        <button className="px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg=slate-800 text-white mt-3">
+                        <button className="px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-gray-600 to-gray-800 hover:bg-slate-800 text-white mt-3">
                             <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
                                 Download CV
                             </span>
