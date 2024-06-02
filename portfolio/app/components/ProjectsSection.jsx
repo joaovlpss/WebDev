@@ -1,5 +1,7 @@
-import React from 'react';
+"use client";
+import React, { useState } from 'react';
 import ProjectCard from "./ProjectCard";
+import ProjectTag from './ProjectTag';
 
 const projectsData = [
     {
@@ -32,16 +34,36 @@ const projectsData = [
 ];
 
 const ProjectsSection = () => {
+  const [tag, setTag] = useState("All");
+
+  const handleTagChange = (newTag) => {
+    setTag(newTag);
+  };
+
+  const filteredProjects = projectsData.filter((project) => project.tag.includes(tag) 
+  );
+
     return (
       <>
-        <h2 className="text-white text-3xl font-bold my-8">My Projects</h2>
+        <h2 className="text-white text-3xl font-bold my-8">
+          My Projects
+        </h2>
         <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
-          <button className="rounded-full border-2 border-gray-500 px-6 py-3 text-xl cursor-pointer">All</button>
-          <button className="rounded-full border-2 border-gray-500 px-6 py-3 text-xl cursor-pointer">Machine Learning</button>
-          <button className="rounded-full border-2 border-gray-500 px-6 py-3 text-xl cursor-pointer">Back-end</button>
+              <ProjectTag 
+              onClick={handleTagChange} 
+              name='All' 
+              isSelected={tag === 'All'} />
+              <ProjectTag 
+              onClick={handleTagChange} 
+              name='Machine Learning' 
+              isSelected={tag === 'Machine Learning'} />
+              <ProjectTag 
+              onClick={handleTagChange} 
+              name='Back-end' 
+              isSelected={tag === 'Back-end'} />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projectsData.map((project) => (
+          {filteredProjects.map((project) => (
             <ProjectCard
               key={project.id}
               title={project.title}
